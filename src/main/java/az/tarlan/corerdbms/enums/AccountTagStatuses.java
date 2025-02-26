@@ -1,5 +1,5 @@
 package az.tarlan.corerdbms.enums;
 
-public enum TagStatuses {
+public enum AccountTagStatuses {
     ACTIVE, CLOSED
 }

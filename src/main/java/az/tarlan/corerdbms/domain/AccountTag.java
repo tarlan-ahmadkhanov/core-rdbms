@@ -1,7 +1,9 @@
 package az.tarlan.corerdbms.domain;
 
-import az.tarlan.corerdbms.enums.TagStatuses;
+import az.tarlan.corerdbms.enums.AccountTagStatuses;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -9,18 +11,18 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class AccountTag {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @NotNull
     @Size(max = 255)
     private String description;
     @NotNull
-    private TagStatuses status;
+    private AccountTagStatuses status;
 
     public AccountTag() {
     }
 
-    public AccountTag(long id, String description, TagStatuses status) {
-        this.id = id;
+    public AccountTag(String description, AccountTagStatuses status) {
         this.description = description;
         this.status = status;
     }
@@ -41,11 +43,11 @@ public class AccountTag {
         this.description = description;
     }
 
-    public TagStatuses getStatus() {
+    public AccountTagStatuses getStatus() {
         return status;
     }
 
-    public void setStatus(TagStatuses status) {
+    public void setStatus(AccountTagStatuses status) {
         this.status = status;
     }
 
