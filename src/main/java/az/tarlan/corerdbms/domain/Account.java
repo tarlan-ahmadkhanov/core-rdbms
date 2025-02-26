@@ -4,6 +4,8 @@ import az.tarlan.corerdbms.enums.Currency;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -12,9 +14,10 @@ import java.util.Objects;
 public class Account {
 
     @Id
-    private String account_number;
+    private String accountNumber;
     @NotNull
-    private long customer_id;
+    @Size(min = 10, max = 10)
+    private String customerId;
     @NotNull
     private Currency currency;
     @NotNull
@@ -24,38 +27,38 @@ public class Account {
     private String cbarAccount;
 
     @NotNull
-    private long tag_id;
+    private long tagId;
     @NotNull
-    private LocalDate opening_date;
+    private LocalDate openingDate;
 
     public Account() {
     }
 
 
-    public Account(String account_number, long customer_id, Currency currency, BigDecimal balance, String cbarAccount, long tag_id, LocalDate opening_date) {
-        this.account_number = account_number;
-        this.customer_id = customer_id;
+    public Account(String accountNumber, String customerId, Currency currency, BigDecimal balance, String cbarAccount, long tagId, LocalDate openingDate) {
+        this.accountNumber = accountNumber;
+        this.customerId = customerId;
         this.currency = currency;
         this.balance = balance;
         this.cbarAccount = cbarAccount;
-        this.tag_id = tag_id;
-        this.opening_date = opening_date;
+        this.tagId = tagId;
+        this.openingDate = openingDate;
     }
 
-    public String getAccount_number() {
-        return account_number;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setAccount_number(String account_number) {
-        this.account_number = account_number;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public long getCustomer_id() {
-        return customer_id;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(long customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public Currency getCurrency() {
@@ -82,20 +85,20 @@ public class Account {
         this.cbarAccount = cbarAccount;
     }
 
-    public long getTag_id() {
-        return tag_id;
+    public long getTagId() {
+        return tagId;
     }
 
-    public void setTag_id(long tag_id) {
-        this.tag_id = tag_id;
+    public void setTagId(long tagId) {
+        this.tagId = tagId;
     }
 
-    public LocalDate getOpening_date() {
-        return opening_date;
+    public LocalDate getOpeningDate() {
+        return openingDate;
     }
 
-    public void setOpening_date(LocalDate opening_date) {
-        this.opening_date = opening_date;
+    public void setOpeningDate(LocalDate openingDate) {
+        this.openingDate = openingDate;
     }
 
     @Override
@@ -103,11 +106,11 @@ public class Account {
         if (o == null || getClass() != o.getClass()) return false;
 
         Account account = (Account) o;
-        return Objects.equals(account_number, account.account_number);
+        return Objects.equals(accountNumber, account.accountNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(account_number);
+        return Objects.hashCode(accountNumber);
     }
 }

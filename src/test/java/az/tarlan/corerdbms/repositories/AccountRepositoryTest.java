@@ -25,7 +25,7 @@ class AccountRepositoryTest {
         String accountNUmber = "ACCOUNT_NUMBER_" + random.nextInt(10);
         Account account = new Account(
                 accountNUmber,
-                Long.valueOf(12345),
+                "0000000001",
                 Currency.AZN,
                 BigDecimal.valueOf(0.0),
                 "1001",
