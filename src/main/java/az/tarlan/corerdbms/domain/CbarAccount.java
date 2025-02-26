@@ -13,55 +13,55 @@ import java.util.Objects;
 public class CbarAccount {
 
     @Id
-    private String cbar_account_number;
+    private String cbarAccountNumber;
     @NotNull
     @Size(max = 255)
-    private String account_description;
+    private String accountDescription;
     @NotNull
-    private AccountType account_type;
+    private AccountType accountType;
     @NotNull
-    private CbarAccountStatuses account_status;
+    private CbarAccountStatuses accountStatus;
 
     public CbarAccount() {
     }
 
-    public CbarAccount(String cbar_account_number, String account_description, AccountType account_type, CbarAccountStatuses account_status) {
-        this.cbar_account_number = cbar_account_number;
-        this.account_description = account_description;
-        this.account_type = account_type;
-        this.account_status = account_status;
+    public CbarAccount(String cbarAccountNumber, String accountDescription, AccountType accountType, CbarAccountStatuses accountStatus) {
+        this.cbarAccountNumber = cbarAccountNumber;
+        this.accountDescription = accountDescription;
+        this.accountType = accountType;
+        this.accountStatus = accountStatus;
     }
 
-    public String getCbar_account_number() {
-        return cbar_account_number;
+    public String getCbarAccountNumber() {
+        return cbarAccountNumber;
     }
 
-    public void setCbar_account_number(String cbar_account_number) {
-        this.cbar_account_number = cbar_account_number;
+    public void setCbarAccountNumber(String cbarAccountNumber) {
+        this.cbarAccountNumber = cbarAccountNumber;
     }
 
-    public String getAccount_description() {
-        return account_description;
+    public String getAccountDescription() {
+        return accountDescription;
     }
 
-    public void setAccount_description(String account_description) {
-        this.account_description = account_description;
+    public void setAccountDescription(String accountDescription) {
+        this.accountDescription = accountDescription;
     }
 
-    public AccountType getAccount_type() {
-        return account_type;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public void setAccount_type(AccountType account_type) {
-        this.account_type = account_type;
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
     }
 
-    public CbarAccountStatuses getAccount_status() {
-        return account_status;
+    public CbarAccountStatuses getAccountStatus() {
+        return accountStatus;
     }
 
-    public void setAccount_status(CbarAccountStatuses account_status) {
-        this.account_status = account_status;
+    public void setAccountStatus(CbarAccountStatuses accountStatus) {
+        this.accountStatus = accountStatus;
     }
 
     @Override
@@ -69,11 +69,11 @@ public class CbarAccount {
         if (o == null || getClass() != o.getClass()) return false;
 
         CbarAccount that = (CbarAccount) o;
-        return Objects.equals(cbar_account_number, that.cbar_account_number);
+        return Objects.equals(cbarAccountNumber, that.cbarAccountNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(cbar_account_number);
+        return Objects.hashCode(cbarAccountNumber);
     }
 }

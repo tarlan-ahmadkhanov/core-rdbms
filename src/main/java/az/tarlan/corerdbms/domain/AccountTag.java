@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class AccountTag {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
     @Size(max = 255)
