@@ -1,6 +1,7 @@
 package az.tarlan.corerdbms.repositories;
 
 import az.tarlan.corerdbms.domain.Account;
+import az.tarlan.corerdbms.enums.AccountStatus;
 import az.tarlan.corerdbms.enums.Currency;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ class AccountRepositoryTest {
                 Currency.AZN,
                 BigDecimal.valueOf(0.0),
                 "1001",
-                1,
+                AccountStatus.ACTIVE,
                 LocalDate.now()
         );
 
