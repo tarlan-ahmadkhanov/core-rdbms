@@ -1,5 +1,6 @@
 package az.tarlan.corerdbms.domain;
 
+import az.tarlan.corerdbms.enums.AccountStatus;
 import az.tarlan.corerdbms.enums.Currency;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -22,12 +23,10 @@ public class Account {
     private Currency currency;
     @NotNull
     private BigDecimal balance;
-
     @NotNull
     private String cbarAccount;
-
     @NotNull
-    private long tagId;
+    AccountStatus accountStatus;
     @NotNull
     private LocalDate openingDate;
 
@@ -35,13 +34,13 @@ public class Account {
     }
 
 
-    public Account(String accountNumber, String customerId, Currency currency, BigDecimal balance, String cbarAccount, long tagId, LocalDate openingDate) {
+    public Account(String accountNumber, String customerId, Currency currency, BigDecimal balance, String cbarAccount, AccountStatus accountStatus, LocalDate openingDate) {
         this.accountNumber = accountNumber;
         this.customerId = customerId;
         this.currency = currency;
         this.balance = balance;
         this.cbarAccount = cbarAccount;
-        this.tagId = tagId;
+        this.accountStatus = accountStatus;
         this.openingDate = openingDate;
     }
 
@@ -85,12 +84,12 @@ public class Account {
         this.cbarAccount = cbarAccount;
     }
 
-    public long getTagId() {
-        return tagId;
+    public AccountStatus getAccountStatus() {
+        return accountStatus;
     }
 
-    public void setTagId(long tagId) {
-        this.tagId = tagId;
+    public void setAccountStatus(AccountStatus accountStatus) {
+        this.accountStatus = accountStatus;
     }
 
     public LocalDate getOpeningDate() {
